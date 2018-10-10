@@ -1,0 +1,216 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is a (brief) model paper using the achemso class
+%% The document class accepts keyval options, which should include
+%% the target journal and optionally the manuscript type.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[journal=jpclcd,manuscript=article
+%,layout=twocolumn
+]{achemso}
+%\setkeys{acs}{articletitle = true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional packages needed here.  Only include packages
+%% which are essential, to avoid problems later. Do NOT use any
+%% packages which require e-TeX (for example etoolbox): the e-TeX
+%% extensions are not currently available on the ACS conversion
+%% servers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+\usepackage[T1]{fontenc}       % Use modern font encodings
+\usepackage{physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If issues arise when submitting your manuscript, you may want to
+%% un-comment the next line.  This provides information on the
+%% version of every file you have used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional macros here.  Please use \newcommand* where
+%% possible, and avoid layout-changing macros (which are not used
+%% when typesetting).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand\thefigure{S\arabic{figure}} 
+\renewcommand\thetable{S\arabic{table}}
+
+% math
+\newcommand*{\pd}[1]{\dfrac{\partial}{\partial #1}}
+\newcommand*{\TT}{^{\mathrm{T}}}
+
+\usepackage{color}
+\newcommand*{\todo}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand*{\new}[1]{\textcolor{blue}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Meta-data block
+%% ---------------
+%% Each author should be given as a separate \author command.
+%%
+%% Corresponding authors should have an e-mail given after the author
+%% name as an \email command. Phone and fax numbers can be given
+%% using \phone and \fax, respectively; this information is optional.
+%%
+%% The affiliation of authors is given after the authors; each
+%% \affiliation command applies to all preceding authors not already
+%% assigned an affiliation.
+%%
+%% The affiliation takes an option argument for the short name.  This
+%% will typically be something like "University of Somewhere".
+%%
+%% The \altaffiliation macro should be used for new address, etc.
+%% On the other hand, \alsoaffiliation is used on a per author basis
+%% when authors are associated with multiple institutions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Felix Plasser}
+\email{felix.plasser@univie.ac.at}
+%\affiliation{Department of Chemistry, Loughborough University, LE11 3TU, United Kingdom.}
+%\altaffiliation{Institute for Theoretical Chemistry, Faculty of Chemistry, University of Vienna, W\"ahringerstr. 17, 1090 Vienna, Austria}
+\author{Sandra G\'omez}
+\author{Sebastian Mai}
+\author{Leticia Gonz\'alez}
+\email{leticia.gonzalez@univie.ac.at}
+%\affiliation[University of Vienna]
+%{Institute for Theoretical Chemistry, Faculty of Chemistry, University of Vienna, W\"ahringerstr. 17, 1090 Vienna, Austria}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The document title should be given as usual. Some journals require
+%% a running title from the author: this should be supplied as an
+%% optional argument to \title.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textit{Electronic Supporting Information for}\\*[1em]Highly efficient surface hopping dynamics using a linear vibronic coupling model}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some journals require a list of abbreviations or keywords to be
+%% supplied. These should be set up here, and will be printed after
+%% the title and author information, if needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\abbreviations{IR,NMR,UV}
+%\keywords{American Chemical Society, \LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The manuscript does not need to include \maketitle, which is
+%% executed automatically.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start the main part of the manuscript here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{LVC Parameters}
+
+ \begin{table*}[h!]
+ \label{tab:LVC}
+ \caption{LVC-Parameters (eV) for SO$_2$ computed at the MR-CIS(6,6)/ANO-RCC-VDZP level of theory.\textsuperscript{a}}
+ \begin{tabular}{lrrr|rr}
+ \hline
+  & \multicolumn{1}{c}{$\epsilon_n$} & \multicolumn{1}{c}{$\kappa_{1a_1}^{(n)}$} & \multicolumn{1}{c}{$\kappa_{2a_1}^{(n)}$} & \multicolumn{2}{|c}{$\lambda_{b_2}^{(mn)}$} \\
+ \hline
+ &&&&& \\*[-0.9em]
+ $^1A_1$ &     0 &      0 &      0 & $^1A_1/^1B_2$ & -0.498472\\
+ $^1B_1$ & 4.462792 & 0.032558 & 0.331565 & $^1B_1/^1A_2$ & 0.199193 \\ 
+$^1A_2$ & 4.847730 & -0.217356 & 0.504755 \\ 
+$^1B_2$ & 6.805345 & -0.121284 & 0.482766 \\ 
+$^3B_1$ & 3.649723 & 0.078288 & 0.222898 & $^3B_1/^3A_2$  & 0.155580  \\ 
+$^3B_2$ & 4.478220 & -0.136967 & 0.499509 \\ 
+$^3A_2$ & 4.627331 & -0.219168 & 0.506301 \\
+ \hline
+ \end{tabular}
+ 
+ \vspace{0.5em}
+ \textsuperscript{a} The frequencies are: $\omega_{1a_1}=518.75\mathrm{cm}^{-1}$, $\omega_{1a_2}=1165.17\mathrm{cm}^{-1}$, $\omega_{1a_1}=1405.24\mathrm{cm}^{-1}$.
+ \end{table*}
+
+ \begin{table*}
+ \label{tab:LVCD}
+ \caption{LVC-Parameters (eV) for SO$_2$ computed at the MR-CISD(12,9)/ANO-RCC-VTZP level of theory.\textsuperscript{a,b}}
+ \begin{tabular}{lrrr|rr}
+ \hline
+  & \multicolumn{1}{c}{$\epsilon_n$} & \multicolumn{1}{c}{$\kappa_{1a_1}^{(n)}$} & \multicolumn{1}{c}{$\kappa_{2a_1}^{(n)}$} & \multicolumn{2}{|c}{$\lambda_{b_2}^{(mn)}$} \\
+ \hline
+ &&&&& \\*[-0.9em]
+$^1A_1$ &  & -0.017641 & -0.024908 & $^1A_1/^1B_2$ & 0.451491 \\ 
+$^1B_1$ & 4.226686 & 0.028991 & 0.294386 & $^1B_1/^1A_2$ & -0.151271 \\ 
+$^1A_2$ & 4.595060 & -0.215731 & 0.444536 &  &  \\ 
+$^1B_2$ & 8.403901 & -0.130622 & 0.463663 &  &  \\ 
+$^3B_1$ & 3.349913 & 0.070993 & 0.189128 & $^3B_1/^3A_2$ & -0.099622 \\ 
+$^3B_2$ & 4.210887 & -0.142804 & 0.465614 &  &  \\ 
+$^3A_2$ & 4.356258 & -0.217377 & 0.440914 &  &  \\ 
+ \hline
+ \end{tabular}
+ 
+ \vspace{0.5em}
+ \textsuperscript{a} The frequencies are: $\omega_{1a_1}=518.75\mathrm{cm}^{-1}$, $\omega_{1a_2}=1165.17\mathrm{cm}^{-1}$, $\omega_{1a_1}=1405.24\mathrm{cm}^{-1}$.
+ 
+ \textsuperscript{b} Reference geometry and vibrations determined at the MR-CIS level. Therefore, the $\kappa$ values for the ground state do not vanish.
+ \end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \begin{table*}[h!]
+ \caption{Diabatic spin-orbit coupling parameters $\eta_{mn}$ (cm\textsuperscript{-1}) of SO$_2$ determined at the MR-CIS(6,6)/ANO-RCC-VDZP level of theory.}
+
+\begin{tabular}{l||rrr|rrr|rrr}
+\hline
+ & $^3B_1(0)$ & $^3B_2(0)$ & $^3A_2(0)$ & $^3B_1(+)$ & $^3B_2(+)$ & $^3A_2(+)$ & $^3B_1(-)$ & $^3B_2(-)$ & $^3A_2(-)$ \\ 
+\hline\hline
+$^1A_1$ & 0.00 & 0.00 & -34.96 & 134.35 & 0.00 & 0.00 & 0.00 & 1.04 & 0.00 \\ 
+$^1B_1$ & 0.00 & -23.83 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & -52.02 \\ 
+$^1A_2$ & 0.00 & 0.00 & 0.00 & 0.00 & -48.03 & 0.00 & 48.02 & 0.00 & 0.00 \\ 
+$^1B_2$ & 6.69 & 0.00 & 0.01 & -0.01 & 0.00 & -65.74 & 0.00 & 0.00 & 0.00 \\ 
+\hline\hline
+$^3B_1(0)$ & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & -49.62 & 0.00 & 0.00 & 0.00 \\ 
+$^3B_2(0)$ & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & -52.71 \\ 
+$^3A_2(0)$ & 0.00 & 0.00 & 0.00 & 49.62 & 0.00 & 0.00 & 0.00 & 52.71 & 0.00 \\ 
+\hline
+$^3B_1(+)$ & 0.00 & 0.00 & 49.62 & 0.00 & 0.00 & 0.00 & 0.00 & -17.69 & 0.00 \\ 
+$^3B_2(+)$ & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 17.69 & 0.00 & 0.00 \\ 
+$^3A_2(+)$ & -49.62 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+\hline
+$^3B_1(-)$ & 0.00 & 0.00 & 0.00 & 0.00 & 17.69 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+$^3B_2(-)$ & 0.00 & 0.00 & 52.71 & -17.69 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+$^3A_2(-)$ & 0.00 & -52.71 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+
+\hline
+ \end{tabular}
+ \end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{table*}[h!]
+ \caption{Diabatic spin-orbit coupling parameters $\eta_{mn}$ (cm\textsuperscript{-1}) of SO$_2$ determined at the MR-CISD(12,9)/ANO-RCC-VDZP level of theory.}
+ 
+\begin{tabular}{l||rrr|rrr|rrr}
+
+\hline
+ & $^3B_1(0)$ & $^3B_2(0)$ & $^3A_2(0)$ & $^3B_1(+)$ & $^3B_2(+)$ & $^3A_2(+)$ & $^3B_1(-)$ & $^3B_2(-)$ & $^3A_2(-)$ \\ 
+\hline\hline
+$^1A_1$ & 0.00 & -0.03 & -45.87 & -146.25 & 0.00 & 0.03 & 0.00 & -0.45 & 0.01 \\ 
+$^1B_1$ & 0.00 & 26.93 & -0.01 & 0.00 & -0.02 & 0.00 & -0.02 & -0.01 & -54.90 \\ 
+$^1A_2$ & 0.00 & 0.01 & 0.00 & -0.01 & -44.05 & -0.03 & 51.47 & 0.00 & 0.09 \\ 
+$^1B_2$ & 0.03 & -0.22 & -36.46 & -126.13 & 0.61 & 0.21 & 0.53 & -0.44 & 0.05 \\ 
+\hline\hline
+$^3B_1(0)$ & 0.00 & 0.00 & 0.00 & 0.00 & 0.02 & 52.85 & 0.00 & 0.00 & 0.00 \\ 
+$^3B_2(0)$ & 0.00 & 0.00 & 0.00 & -0.02 & 0.00 & 0.00 & 0.00 & 0.00 & 48.10 \\ 
+$^3A_2(0)$ & 0.00 & 0.00 & 0.00 & -52.85 & 0.00 & 0.00 & 0.00 & -48.10 & 0.00 \\ 
+\hline
+$^3B_1(+)$ & 0.00 & -0.02 & -52.85 & 0.00 & 0.00 & 0.00 & 0.00 & -20.60 & 0.00 \\ 
+$^3B_2(+)$ & 0.02 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 20.60 & 0.00 & 0.05 \\ 
+$^3A_2(+)$ & 52.85 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & -0.05 & 0.00 \\ 
+\hline
+$^3B_1(-)$ & 0.00 & 0.00 & 0.00 & 0.00 & 20.60 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+$^3B_2(-)$ & 0.00 & 0.00 & -48.10 & -20.60 & 0.00 & -0.05 & 0.00 & 0.00 & 0.00 \\ 
+$^3A_2(-)$ & 0.00 & 48.10 & 0.00 & 0.00 & 0.05 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+\hline
+\end{tabular}
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The appropriate \bibliography command should be placed here.
+%% Notice that the class file automatically sets \bibliographystyle
+%% and also names the section correctly.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliography{allrefs}
+
+
+\end{document}
